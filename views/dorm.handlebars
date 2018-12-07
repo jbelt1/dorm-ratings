@@ -1,0 +1,43 @@
+<div id="dorm-container">
+    <h1 id="dorm-name">{{info.name}}</h1>
+    <h1 id="overall-rating" class="dorm-rating" data-rating={{info.rateOverall}}>{{info.rateOverall}}</h1>
+    <h1 id="num-reviews">{{info.numReviews}} Reviews</h1>
+    <div id="rating-container">
+        <div class="column">
+            <h2>Location: <span class="dorm-rating" data-rating={{info.rateLocation}}>{{info.rateLocation}}</span></h2>
+            <h2>Social: <span class="dorm-rating" data-rating={{info.rateSocial}}>{{info.rateSocial}}</span></h2>
+        </div>
+        <div class="column">
+            <h2>Amenities: <span class="dorm-rating " data-rating={{info.rateAmenities}}>{{info.rateAmenities}}</span></h2>
+            <h2>Cleanliness: <span class="dorm-rating" data-rating={{info.rateCleanliness}}>{{info.rateCleanliness}}</span></h2>
+        </div>
+    </div> 
+    <div id="reviews-container">
+        <button id="add" data-name="{{info.name}}">Add Review</button>
+        <div id="categories">
+            <div id="user-info-header">
+                <p>User Info</p>
+            </div>
+            <div id="user-comment-header">
+                <p>Review</p>
+            </div>
+        </div>
+        {{#each info.userReviews}}
+            <div class="review">
+                <div class="user-info">
+                    <p>{{this.user}}</p>
+                    <p>{{this.overall}}</p>
+                </div>
+                <div class="user-comment">
+                    <div class="comment-content">
+                        <strong>Adjectives:</strong>
+                        {{#each this.adjectives}}
+                            <div class="adjective">{{this}}</div>
+                        {{/each}}
+                    </div>
+                    <p class="comment-content"><strong>Comment:</strong> {{this.comment}}</p>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

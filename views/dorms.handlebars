@@ -1,0 +1,25 @@
+
+<div id="header">
+    <h1 id="header-title">{{type}} UMD Dorms</h1>
+    <input type="text" id="search" placeholder="Oakland..."/>
+</div>
+<div id="all-dorms-container">
+    <h1 id="no-results">No results...</h1>
+    {{#each dorms}}
+        <div class="dorm" id="{{this.name}}">
+            <div class="space"></div>
+            <div class="dorm-main">
+                <div class="dorm-top">
+                    <h1 class="dorm-name">{{this.name}}</h1>   
+                </div>
+                <div class="dorm-middle">   
+                    <h1 class="dorm-rating" data-rating={{this.rateOverall}}>{{this.rateOverall}}</h1>      
+                </div>
+                <div class="dorm-bottom">
+                    <h2>{{this.numReviews}} Reviews</h2> 
+                </div>
+            </div>
+            <div class="space"></div>
+        </div>
+    {{/each}}
+</div>

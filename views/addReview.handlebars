@@ -1,0 +1,33 @@
+<div id="add-review">
+    <h1 id="add-title">Review for {{name}}</h1>
+    <form method="POST" action="/api/addReview" id="add-form">
+        <input type="hidden" name="dormName" value="{{name}}"/>
+        <div class="form-row">
+            <label for="user">Username: </label>
+            <input type="text" class="input" id="user" name="user" placeholder="terpUser" pattern="\w+" required/>
+        </div>
+        <div class="form-row"> 
+            <label for="cleanliness">Cleanliness: </label>
+            <input type="number" class="small-input" id="cleanliness" name="cleanliness" placeholder="5.0" required min="0.0" max="5.0" step=".1" />/5.0
+        </div>
+        <div class="form-row">
+            <label for="location">Location: </label>
+            <input type="number" class="small-input" id="location" name="location" placeholder="5.0" min="0.0" max="5.0" step=".1" required/>/5.0
+        </div>
+        <div class="form-row">
+            <label for="social">Social: </label> 
+            <input type="number" class="small-input" id="social" name="social" placeholder="5.0" min="0.0" max="5.0" step=".1" required/>
+            /5.0
+            </div>
+        <div class="form-row">
+            <label for="amenities">Amenities: </label>
+            <input type="number" class="small-input" id="amenities" name="amenities" placeholder="5.0" min="0.0" max="5.0" step=".1" required />/5.0
+        </div>
+        <div class="form-row">
+            <label for="adjectives">Adjectives: </label>
+            <input type="text" class="input" id="adjectives" name="adjectives" placeholder="Optional list of adjectives: Cool, Clean..." pattern="^[A-Z][a-z]+(, [A-Z][a-z]+)*$"/>
+        </div>
+        <textarea type="text" id="comment" name="comment" placeholder="Comment here..." maxlength="100"></textarea>
+        <input type="submit" id="submit" name="submit" value="Submit Review"/>
+    </form>
+</div>
